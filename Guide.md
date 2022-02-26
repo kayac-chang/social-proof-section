@@ -689,8 +689,8 @@ so using `overflow: hidden` trick to disable that.
   bottom: var(--0);
   left: var(--1\/2);
   transform: translateX(calc(-1 * var(--1\/2)));
-  width: 1085px;
-  height: 673px;
+  width: 375px;
+  height: 503px;
 }
 ```
 
@@ -920,10 +920,10 @@ function App() {
     grid-column: 1 / 3;
   }
   .list.comment > li:nth-child(2) {
-    transform: translateY(calc(1 * var(--4444444)));
+    transform: translateY(calc(1 * var(--4)));
   }
   .list.comment > li:nth-child(3) {
-    transform: translateY(calc(2 * var(--444)));
+    transform: translateY(calc(2 * var(--4)));
   }
 }
 ```
@@ -955,6 +955,26 @@ see how we adapt this to our `rate` style.
   }
   .rate ul {
     justify-content: center;
+  }
+}
+```
+
+and then update our decoration too.
+
+```css
+@media (min-width: 768px) {
+  .main::before {
+    background-image: url("./images/bg-pattern-top-desktop.svg");
+    width: 584px;
+    height: 362px;
+  }
+  .main::after {
+    background-image: url("./images/bg-pattern-bottom-desktop.svg");
+    width: 1085px;
+    height: 673px;
+    left: auto;
+    right: var(--0);
+    transform: none;
   }
 }
 ```
