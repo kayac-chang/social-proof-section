@@ -1039,13 +1039,13 @@ function App() {
 }
 ```
 
-Mention that when we using `children` keyword on props,
-we can write some nested children like how we write in normal HTML.
+Mention that when we using `children` keyword on props,  
+we can write some nested children like how we write in normal HTML.  
+  
+next, we are going to handle list of rates and comments,  
+first, we have to define what kinds of data and what's their structure.  
 
-next, we are going to handle list of rates and comments,
-first, we have to define what kinds of data and what's their structure.
-
-Inside your `App` components, we can define data like this.
+Inside your `App` components, we can define data like this.  
 
 ```js
 function App() {
