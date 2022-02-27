@@ -257,11 +257,11 @@ function Rate() {
 ```
 
 The `Comment` component which can be separated into 
-- header
-  - avatar
-  - username
-  - description of user
-- description
+   * - header
+   *    - avatar
+   *    - username
+   *    - verified
+   * - comment
 
 ```js
 function Comment() {
@@ -628,7 +628,6 @@ and styling our `Comment`.
   width: var(--10);
   aspect-ratio: 1/1;
   border-radius: var(--full);
-  overflow: hidden;
 }
 .comment p {
   line-height: var(--6);
