@@ -11,9 +11,9 @@ and love to share with you guys
 Today, we are going to make a social proof section with React
 
 We will cover:
-1. basic React concept like functional component, JSX, props ...etc
-2. using pure css to make an Responsive Web
-3. deploy your work to the internet so everyone can see it
+1. Basic React concept like functional component, JSX, props ...etc
+2. Using pure css to make an Responsive Web
+3. Deploy your work to the internet so everyone can see it
 
 There are a lot of things we need to talk,
 so let's got jump in to it
