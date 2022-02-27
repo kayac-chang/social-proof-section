@@ -2,16 +2,16 @@
 
 ## Introduction
 
-Hello, What's up guys
-Welcome back to my tutorial
-If you're new in here, My name is Hello,
-I'm love programming and web technology,
-and love to share with you guys
+Hello, What's up guys  
+Welcome back to my tutorial  
+If you're new in here, My name is Hello,  
+I'm love programming and web technology,  
+and love to share with you guys  
 
 Today, we are going to make a social proof section with React
 
 We will cover:
-1. basic react concept like functional component, JSX, props ...etc
+1. basic React concept like functional component, JSX, props ...etc
 2. using pure css to make an Responsive Web
 3. deploy your work to the internet so everyone can see it
 
@@ -20,19 +20,19 @@ so let's got jump in to it
 
 ## Setup
 
-Let's start with talking about how to setup your react project.
+Let's start with talking about how to setup your react project.  
+  
+there are several way to startup your react application  
+one of the most common and easiest way,  
+is using a program call **Create React App**  
+which is a CLI (aka Command Line Interface)   
+to let you easily setup and running react with a boilerplate.  
+They give you a basic project structure and package you need
+also provide a development server  
+which let you can easily working on without any hassle.  
 
-there are several way to startup your react application
-one of the most common and easiest way,
-is using a program call **Create React App**
-which is a CLI (aka Command Line Interface)
-to let you easily setup and running react with a boilerplate.
-they give you a basic project structure and package you need
-also provide a development server
-which let you can easily working on without any hassle.
-
-**notice**
-make sure you are already have NodeJS with npm 5.2+ installed in your machine
+**Notice**
+make sure you are already have NodeJS with **npm 5.2+** installed in your machine  
 ```bash
 npm --version
 ```
@@ -61,10 +61,10 @@ function App() {
 
 export default App;
 ```
-
-add `@import-normalize` at the top of `src/index.css`,
-this will help us handle cross-browser default styling issue,
-and we remove some default stuff, so we don't have to override again and agin.
+ 
+add `@import-normalize` at the top of `src/index.css`,    
+this will help us handle cross-browser default styling issue,    
+and we remove some default stuff, so we don't have to override again and again.  
 ```css
 @import-normalize;
 
@@ -95,25 +95,25 @@ ol {
 }
 ```
 
-Copy `images/` folder from Social Proof Section sample project
-in our `src/` directory,
-and we are good to go.
+Copy `images/` folder from *Social Proof Section* sample project  
+in our `src/` directory,  
+and we are good to go.  
 
 ## Start
 
-It's very easy to get stuck at begin as a beginner,
-to make our work more clear and productive,
-we will following the some steps which been mention in [Thinking in React](TIR)
-to get the job done.
+It's very easy to get stuck at begin as a beginner,  
+to make our work more clear and productive,  
+we will following the some steps which been mention in [Thinking in React](https://reactjs.org/docs/thinking-in-react.html). 
+to get the job done.  
 
-### Step 1: Breaking down big UI Into small pieces of components
+### Step 1: Breaking down big UI Into small pieces of components  
 
-Start by analyzing make you double,
-when we look at the mockup, 
-the first part we should take care is the mobile layout,
-start from mobile not only a principle but a good approach to make Responsive Web Design easier.
+Start by analyzing make you can double use it,  
+when we look at the mockup,  
+the first part we should take care is the mobile layout,  
+start from mobile not only a principle but a good approach to make Responsive Web Design easier.  
 
-Then we start to break down mockup, into four pieces:
+Then we start to break down mockup, into four pieces:  
 
 - header
   - Title
@@ -177,16 +177,17 @@ function App() {
 export default App;
 ```
 
-The structure of our work seems more clear now,
-let's getting start to build our static site.
+The structure of our work seems more clear now,  
+let's getting start to build our static site.  
 
 > #### JSX
-> did you notice we write HTML in Javascript file?
-> actually, this is not real HTML.
-> the syntax called `jsx`, which is a template for compiler to generate React Element,
-> React Element are pure Javascript Object which contains some data for present the UI. 
+> Did you notice we write HTML in Javascript file?  
+> Actually, this is not real HTML 
+>  
+> The syntax called `jsx`, which is a template for compiler to generate React Element,  
+> React Element are pure Javascript Object which contains some data for present the UI on screen.   
 >
-> the following examples are equivalent:
+> the following examples are equivalent:  
 > ```js
 > const element = (
 >   <h1 className="greeting">
@@ -202,24 +203,25 @@ let's getting start to build our static site.
 > );
 > ```
 
-> #### Functional Component
-> From react 16+, we are mostly using functional component now.
-> it's worth to known, 
-> the *component* terms in here is actually a **abstraction**,
-> that developer easy to understand and discussion,
-> the actual implement detail is even simple, just a **pure function**,
-> which produce `react element` by passing `props`.
+> #### Functional Component  
+> From react 16+, we are mostly using functional component now.  
+> it's worth to known,  
+> the *component* terms in here is actually a **abstraction**,  
+> that developer easy to understand and discussion,  
+> the actual implement detail is even simple, just a **pure function**,  
+> which produce `React element` by passing `props`.  
 
 ### Step 2: Build A Static Version in React
 
-We are start to build a static site, 
-seems like it's a little bit hard to doing whole process at once.
-Let us separate piece by piece.
+We are start to build a static site,   
+seems like it's a little bit hard to doing whole process at once.   
+Let us separate piece by piece.   
 
-#### 1. Write semantic tag with content (or placeholder content)
 
-we are going to implement `Title` and `Description`,
-these should be easy.
+#### 1. Write semantic tag with content (or placeholder content)  
+
+we are going to implement `Title` and `Description`,  
+these should be easy.  
 
 ```js
 function Title() {
@@ -236,8 +238,8 @@ function Description() {
 }
 ```
 
-`Rate` is a component which includes stars and some description,
-we can mockup by this:
+`Rate` is a component which includes stars and some description,  
+we can mockup by this:  
 ```js
 function Rate() {
   return (
@@ -256,12 +258,12 @@ function Rate() {
 }
 ```
 
-The `Comment` component which can be separated into 
-   * - header
-   *    - avatar
-   *    - username
-   *    - verified
-   * - comment
+The `Comment` component which can be separated into  
+ - header  
+    - avatar
+    - username
+    - verified
+ - comment
 
 ```js
 function Comment() {
@@ -286,14 +288,16 @@ function Comment() {
 }
 ```
 
-now we have basic structure with some content,
-time to make our page prettier with `css`.
+Now we have basic structure with some content,   
+time to make our page prettier with `css`.   
+
 
 #### 2. Prepare css structure for styling
 
-We are going to make some style for our application,
-create `src/App.module.css` and modify `src/App.jsx` to use that style.
-
+We are going to make some style for our application,  
+create `src/App.module.css` and modify `src/App.jsx` to use that style.  
+  
+  
 **src/App.module.css**
 ```css
 .title {
@@ -369,28 +373,30 @@ function App() {
 }
 ```
 
-> ##### What is `*.module.css`
-> if you see this file extension first time, 
-> it's called **css module**,
-> **css module** is simple, just normal css + module support,
-> the main reason we using module is for isolate our style from global scope,
-> module style only apply on component which currently using it.
-> it really handy approach when you working on **Component**.
-> In Create React App, 
-> we using **import** syntax to bring **css module** in scope,
-> and using styles like accessing attributes on Javascript Object,
-> It's worth to know that this `styles.xxx` actually **just a string**,
-> this is an className generated at build time,
-> bundler will generate different string by every modules who is using it.
+> ##### What is `*.module.css`  
+> If you see this file extension first time,   
+> it's called **css module**,   
+> **css module** is simple, just normal css + module support.   
+> 
+> The main reason we using module is for isolate our style from global scope,   
+> module style only apply on component which currently using it.   
+> It really handy approach when you working on **Component**.   
+> 
+> In Create React App,   
+> we using **import** syntax to bring **css module** in scope,   
+> and using styles like accessing attributes on Javascript Object,   
+> It's worth to know that this `styles.xxx` actually **just a string**,   
+> this is an className generated at build time,   
+> bundler will generate different string by every modules who is using it.   
+  
+#### 3. Design System First and Start styling    
 
-#### 3. Design System First and Start styling 
+To make our style more organize,   
+it's nice to have a rule or system to limit arbitrary value usage.   
+This `1unit = 0.25rem = 4px``1rem = 16px` rule you will see in many design system again and again.   
 
-To make our style more organize, 
-it's nice to have a rule or system to limit arbitrary value usage.
-this `1unit = 0.25rem = 4px` rule you will see in many design system again and again.
-
-add following code on top of your `src/App.module.css`
-the `:local` syntax help us encapsulate some style normally influence global scope. 
+add following code on top of your `src/App.module.css`   
+the `:local` syntax help us encapsulate some style normally influence global scope.    
 
 ```css
 :local :root {
@@ -404,7 +410,7 @@ the `:local` syntax help us encapsulate some style normally influence global sco
 }
 ```
 
-and then, start to layout `.main` and `.title`,
+And then, start to layout `.main` and `.title`,  
 
 ```css
 .main {
@@ -420,8 +426,8 @@ and then, start to layout `.main` and `.title`,
 }
 ```
 
-see, we using **css variable** to reuse spacing number.
-we keep going to implement our color plate.
+See, we using **css variable** to reuse spacing number.    
+We keep going to implement our color plate.  
 
 ```css
 :local :root {
@@ -447,7 +453,7 @@ we keep going to implement our color plate.
 }
 ```
 
-and we now can finish our `header` section
+And we now can finish our `header` section  
 
 ```css
 .header {
@@ -458,25 +464,25 @@ and we now can finish our `header` section
 }
 ```
 
-next, we going to implement our components `Rate` and `Comment`
+Next, we going to implement our components `Rate` and `Comment`  
 
-#### 4. Adding Assets
+#### 4. Adding Assets  
 
-Before we start to implement `Rate` and `Comment`,
-we need to import some assets from our `src/images`.
+Before we start to implement `Rate` and `Comment`,   
+we need to import some assets from our `src/images`.    
+  
+Thanks for *Create React App*,  
+They provide a easy way let us just using `import` syntax   
+to bring our assets like `jpg`, `png` or `svg` into project.  
 
-Thanks for Create React App,
-They provide a easy way let us just using `import` syntax 
-to bring our assets like `jpg`, `png` or `svg` into project.
-
-We try to bring `images/icon-star.svg` into our project.
+We try to bring `images/icon-star.svg` into our project.  
 
 ```js
-// import svg as react component
-import { ReactComponent as IconStar } from "./images/icon-star.svg";
+// import svg as react component  
+import { ReactComponent as IconStar } from "./images/icon-star.svg"; 
 ```
 
-And then, we using `IconStar` like normal **React Component**.
+And then, we using `IconStar` like normal **React Component**.  
 
 ```js
 function Rate() {
@@ -506,8 +512,8 @@ function Rate() {
 }
 ```
 
-now, we have more style need to used, 
-modify our style system like below
+Now, we have more style need to used,  
+modify our style system like below.
 
 ```css
 :local :root {
@@ -535,7 +541,7 @@ modify our style system like below
 }
 ```
 
-and start styling `Rate` component
+And start styling `Rate` component
 
 ```css
 /* === rate === */
@@ -559,17 +565,19 @@ and start styling `Rate` component
 }
 ```
 
-after we finished the `Rate`, we are going to implement `Comment` as well,
-first, bring `images/image-colton.jpg` into scope, 
-this picture can being our comment avatar.
+After we finished the `Rate`,   
+we are going to implement `Comment` as well.  
+
+First, bring `images/image-colton.jpg` into scope,   
+this picture can being our comment avatar.  
 
 ```js
 // bring image as url string
 import PictureColton from "./images/image-colton.jpg";
 ```
 
-seems `Comment` component more complex than previous one,
-we can start modify our `jsx` a little bit,
+Seems `Comment` component more complex than previous one,   
+we can start modify our `jsx` a little bit.  
 
 ```js
 function Comment() {
@@ -598,7 +606,7 @@ function Comment() {
 }
 ```
 
-and styling our `Comment`.
+And styling our `Comment`.
 
 ```css
 .comment {
@@ -653,14 +661,14 @@ and styling our `Comment`.
 }
 ```
 
-Now, we add some decoration to the background,
-because decoration not influence our content,
+Now, we add some decoration to the background,  
+because decoration not influence our content,  
 we can create it by using `css background-image`.
 
-mention that, 
-because decoration is larger than viewport,
-we don't wont horizontal scroll behavior,
-so using `overflow: hidden` trick to disable that.
+Mention that,   
+because decoration is larger than viewport,  
+we don't wont horizontal scroll behavior,  
+so using `overflow: hidden` trick to disable that.  
 
 ```css
 :local :root {
@@ -695,8 +703,8 @@ so using `overflow: hidden` trick to disable that.
 
 #### 6. Implement Desktop Size for Responsive Web Design
 
-before adapt to responsive web design,
-adding some unit in our design system will let our work more efficient.
+Before adapt to responsive web design,   
+adding some unit in our design system will let our work more efficient.  
 
 ```css
 :local :root {
@@ -734,10 +742,11 @@ adding some unit in our design system will let our work more efficient.
 }
 ```
 
-seems our `App.module.css` become larger and larger,
-we can separate our component into their own stylesheet.
-create two css file, `Rate.module.css` and `Comment.module.css`,
-and move our `rate` and `comment` style to their file,
+Seems our `App.module.css` become larger and larger,  
+we can separate our component into their own stylesheet.  
+create two css file, 
+1. `Rate.module.css` and 2. `Comment.module.css`,  
+and move our `rate` and `comment` style to their file,  
 
 **src/Comment.module.css**
 ```css
@@ -839,8 +848,8 @@ function Comment() {
 }
 ```
 
-start from `.main` layout, 
-adding `media query rule` change style by viewport width.
+Start from `.main` layout,   
+adding `media query rule` change style by viewport width.  
 
 ```css
 @media (min-width: 640px) {
@@ -857,10 +866,10 @@ adding `media query rule` change style by viewport width.
 }
 ```
 
-and we look at `list` layout,
-because `list of rate` and `list of comment` 
-are different style in `lg` width,
-we can to distinguish then by adding new class.
+And we look at `list` layout,  
+because `list of rate` and `list of comment`   
+are different style in `lg` width,  
+we can to distinguish then by adding new class.  
 
 ```js
 const clsx = (...classes) => classes.join(" ");
@@ -901,8 +910,8 @@ function App() {
 }
 ```
 
-> **notice**
-> using nice and handy utils to improve readability,
+> **Notice**
+> using nice and handy utils to improve readability,  
 > like `clsx` function we using above.
 
 ```css
@@ -927,7 +936,7 @@ function App() {
 }
 ```
 
-also, our header need to styling as well
+Also, our header need to styling as well
 
 ```css
 @media (min-width: 640px) {
@@ -940,7 +949,7 @@ also, our header need to styling as well
 }
 ```
 
-we can also make our component Responsive,
+We can also make our component Responsive,  
 see how we adapt this to our `rate` style.
 
 **src/Rate.module.css**
@@ -958,7 +967,7 @@ see how we adapt this to our `rate` style.
 }
 ```
 
-and then update our decoration too.
+And then update our decoration too.
 
 ```css
 @media (min-width: 768px) {
@@ -979,25 +988,25 @@ and then update our decoration too.
 ```
 
 
-our `Rate` and `Comment` are static for now,
-next we want to passing some `props` 
-let our component content change dynamically.
+Our `Rate` and `Comment` are static for now,   
+next we want to passing some `props`   
+let our component content change dynamically.  
 
 #### 7. Update Component by passing props
 
-Now, we start to passing some data to our components.
-At first, we need to decide what should be passing by props,
+Now, we start to passing some data to our components.  
+At first, we need to decide what should be passing by props,  
 most of time, the text content.
 
-> ##### React Props
-> react props are just object pass to the component
-> if you are using `jsx` syntax, 
-> then you can passing props like write HTML attribute,
-> but there are some reserved keyword need to remember
+> ##### React Props  
+> react props are just object pass to the component  
+> if you are using `jsx` syntax,  
+> then you can passing props like write HTML attribute,  
+> but there are some reserved keyword need to remember  
 > like `children`, `key` and `ref`
 > which a little bit different compare to normal props.
 
-update `Title` and `Description` with following code,
+Update `Title` and `Description` with following code,
 
 ```js
 function Title({ children }) {
@@ -1030,7 +1039,7 @@ function App() {
 }
 ```
 
-mention that when we using `children` keyword on props,
+Mention that when we using `children` keyword on props,
 we can write some nested children like how we write in normal HTML.
 
 next, we are going to handle list of rates and comments,
@@ -1086,11 +1095,11 @@ function App() {
 }
 ```
 
-and update our `jsx` by this,
-yes, we can passing `array of component` with special `key` props.
-and seems props are just plain Javascript object,
-we can using `object destructure` to passing them to component at once,
-without assign explicitly.
+And update our `jsx` by this,  
+yes, we can passing `array of component` with special `key` props.  
+and seems props are just plain Javascript object,  
+we can using `object destructure` to passing them to component at once,  
+without assign explicitly.  
 
 ```js
 function App() {
@@ -1120,7 +1129,7 @@ function App() {
 }
 ```
 
-write some little helper will let you double
+Write some little helper will let you double
 
 ```js
 const times = (fn, n) => Array.from({ length: n }, (_, idx) => fn(idx));
@@ -1145,8 +1154,8 @@ function Rate({ value, title }) {
 }
 ```
 
-seems like `props` is just some Javascript stuff,
-we can also use `prop` to do some `string processing` or `conditional`.
+Seems like `props` is just some Javascript stuff,  
+we can also use `prop` to do some `string processing` or `conditional`.  
 
 ```js
 function Comment({ user, content }) {
@@ -1173,13 +1182,15 @@ function Comment({ user, content }) {
 
 ## Final
 
-Congratulations! we are finish our site with React and make it Responsive.
-There so many stuff we are cover,
-but that's just a begin of the journey.
+Congratulations!   
+We are finish our site with React and make it Responsive.  
+  
+There so many stuff we are cover,   
+but that's just a begin of the journey.   
+  
+Please let us know if you have any questions,  
+I will love to help you and always.  
 
-Please let us know if you have any questions,
-I will love to help you and always.
-
-See you bye!
-
+See you bye!  
+  
 [TIR]: https://reactjs.org/docs/thinking-in-react.html
