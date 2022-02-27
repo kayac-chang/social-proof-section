@@ -979,13 +979,208 @@ and then update our decoration too.
 }
 ```
 
-Yes! we finish our static site with Responsive Design,
+
 our `Rate` and `Comment` are static for now,
 next we want to passing some `props` 
-to let our component content change dynamically.
+let our component content change dynamically.
 
+#### 7. Update Component by passing props
 
+Now, we start to passing some data to our components.
+At first, we need to decide what should be passing by props,
+most of time, the text content.
 
+> ##### React Props
+> react props are just object pass to the component
+> if you are using `jsx` syntax, 
+> then you can passing props like write HTML attribute,
+> but there are some reserved keyword need to remember
+> like `children`, `key` and `ref`
+> which a little bit different compare to normal props.
 
+update `Title` and `Description` with following code,
+
+```js
+function Title({ children }) {
+  return <h1 className={styles.title}>{children}</h1>;
+}
+```
+
+```js
+function Description({ children }) {
+  return <p className={styles.description}>{children}</p>;
+}
+```
+
+```js
+function App() {
+  return (
+    <main className={styles.main}>
+      <header className={styles.header}>
+        <Title>10,000+ of our users love our products.</Title>
+        <Description>
+          We only provide great products combined with excellent customer
+          service. See what our satisfied customers are saying about our
+          services.
+        </Description>
+      </header>
+
+      ...
+    </main>
+  );
+}
+```
+
+mention that when we using `children` keyword on props,
+we can write some nested children like how we write in normal HTML.
+
+next, we are going to handle list of rates and comments,
+first, we have to define what kinds of data and what's their structure.
+
+Inside your `App` components, we can define data like this.
+
+```js
+function App() {
+  const rates = [
+    {
+      title: "Rated 5 Stars in Reviews",
+      value: 5,
+    },
+    {
+      title: "Rated 5 Stars in Report Guru",
+      value: 5,
+    },
+    {
+      title: "Rated 5 Stars in BestTech",
+      value: 5,
+    },
+  ];
+
+  const comments = [
+    {
+      user: {
+        name: "Colton Smith",
+        isVerified: true,
+        photo: PictureColton,
+      },
+      content: `“ We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent! ”`,
+    },
+    {
+      user: {
+        name: "Irene Roberts",
+        isVerified: true,
+        photo: PictureIrene,
+      },
+      content: `“ Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery.”`,
+    },
+    {
+      user: {
+        name: "Anne Wallace",
+        isVerified: true,
+        photo: PictureAnne,
+      },
+      content: `“ Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone! ”`,
+    },
+  ];
+
+  ...
+}
+```
+
+and update our `jsx` by this,
+yes, we can passing `array of component` with special `key` props.
+and seems props are just plain Javascript object,
+we can using `object destructure` to passing them to component at once,
+without assign explicitly.
+
+```js
+function App() {
+  ...
+
+  return (
+    <main className={styles.main}>
+      ...
+
+      <ul className={clsx(styles.list, styles.rate)}>
+        {rates.map((rate) => (
+          <li key={rate.title}>
+            <Rate {...rate} />
+          </li>
+        ))}
+      </ul>
+
+      <ul className={clsx(styles.list, styles.comment)}>
+        {comments.map((comment) => (
+          <li key={comment.content}>
+            <Comment {...comment} />
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
+```
+
+write some little helper will let you double
+
+```js
+const times = (fn, n) => Array.from({ length: n }, (_, idx) => fn(idx));
+
+function Rate({ value, title }) {
+  return (
+    <div className={rate.rate}>
+      <ul>
+        {times(
+          (id) => (
+            <li key={id}>
+              <IconStar />
+            </li>
+          ),
+          value
+        )}
+      </ul>
+
+      <strong>{title}</strong>
+    </div>
+  );
+}
+```
+
+seems like `props` is just some Javascript stuff,
+we can also use `prop` to do some `string processing` or `conditional`.
+
+```js
+function Comment({ user, content }) {
+  return (
+    <div className={comment.comment}>
+      <header>
+        <img
+          className={comment.avatar}
+          src={user.photo}
+          alt={`${user.name}'s avatar`}
+        />
+
+        <div className={comment.user}>
+          <strong>{user.name}</strong>
+          <span>{user.isVerified ? "Verified Buyer" : "Not Verify"}</span>
+        </div>
+      </header>
+
+      <p>{content}</p>
+    </div>
+  );
+}
+```
+
+## Final
+
+Congratulations! we are finish our site with React and make it Responsive.
+There so many stuff we are cover,
+but that's just a begin of the journey.
+
+Please let us know if you have any questions,
+I will love to help you and always.
+
+See you bye!
 
 [TIR]: https://reactjs.org/docs/thinking-in-react.html
